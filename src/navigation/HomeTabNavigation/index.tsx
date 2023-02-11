@@ -5,15 +5,18 @@ import { useNavigation } from '@react-navigation/native';
 import ButtonSecondary from '../../components/buttons/ButtonSecondary';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Container from '../../components/layout/Container';
 
 function HomeScreen() {
   const { navigate } = useNavigation() as NativeStackNavigationProp<any>
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-      <ButtonSecondary handler={() => navigate('HomeScreen')}>
-        <Text>Go to Home</Text>
-      </ButtonSecondary>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+      <Text style={{alignSelf: 'center'}}>Home!</Text>
+      <Container>
+        <ButtonSecondary handler={() => navigate('HomeScreen')}>
+          <Text>Go to Home Stack</Text>
+        </ButtonSecondary>
+      </Container>
     </View>
   );
 }
@@ -39,7 +42,7 @@ const Tab = createBottomTabNavigator();
 export default function HomeTabNavigation() {
   return (
     <Tab.Navigator
-        screenOptions={({ route }) => ({
+      screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -49,7 +52,7 @@ export default function HomeTabNavigation() {
               : 'ios-information-circle-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'ios-list' : 'ios-list-outline';
-          }else if(route.name === 'Help'){
+          } else if (route.name === 'Help') {
             iconName = focused ? 'ios-help-circle' : 'ios-help-circle-outline';
           }
 

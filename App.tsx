@@ -18,7 +18,8 @@ import RemoveKeyConfirmation from './src/screens/Pix/PixKeyOptions/RemoveKeyConf
 import MyPixKeys from './src/screens/Pix/MyPixKeys/MyPixKeys';
 import PortabilityPixKey from './src/screens/Pix/PixKeyAdd/PortabilityPixKey';
 import HomeTabNavigation from './src/navigation/HomeTabNavigation';
-
+import 'react-native-gesture-handler';
+import HomeDrawerNavigation from './src/navigation/HomeDrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +60,8 @@ export default function App() {
               <Stack.Screen name="RegisterKeyConfirmation" component={RegisterKeyConfirmation} />
               <Stack.Screen name="InfoResult" component={InfoResult} />
               <Stack.Screen name="HomeTabNavigation" component={HomeTabNavigation} />
+              <Stack.Screen name="HomeDrawerNavigation" component={HomeDrawerNavigation} />
+
             </Stack.Navigator>
           </NavigationContainer>
         </View>
