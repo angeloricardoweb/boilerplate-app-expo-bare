@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import HomeTabNavigation from '../HomeTabNavigation';
 import { CustomDrawerContent } from './CustomDrawerContent';
 import { useNavigate } from '../../hooks/useNavigate';
+import ClientStack from '../routes/ClientStack';
+import CustomHeader from '../../components/header';
 
 function SettingsScreen() {
   const { navigate } = useNavigate()
@@ -35,10 +36,13 @@ export default function HomeDrawerNavigation() {
   return (
     <Drawer.Navigator initialRouteName="Home"
       drawerContent={(props) => <CustomDrawerContent {...props} />}
+      screenOptions={{
+        header: (props) => <CustomHeader {...props} />
+      }}
     >
-      <Drawer.Screen name="HomeTabNavigation" component={HomeTabNavigation} />
-      <Drawer.Screen name="NotificationsScreen" component={NotificationsScreen} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen name="ClientStack" component={ClientStack} />
+      {/* <Drawer.Screen name="NotificationsScreen" component={NotificationsScreen} />
+      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} /> */}
 
     </Drawer.Navigator>
   );

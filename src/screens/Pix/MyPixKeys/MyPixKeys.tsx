@@ -1,19 +1,16 @@
 import { View, Text, Touchable, TouchableOpacity, Button } from 'react-native'
 import React, { useCallback } from 'react'
-import { useNavigation } from '@react-navigation/native'
 import Container from '../../../components/layout/Container'
 import H2 from '../../../components/typography/H2'
 import { useGlobal } from '../../../context/GlobalContextProvider'
-import HeaderPage from '../../../components/header'
 import ButtonPix from '../../../components/pix-buttons/ButtonPix'
 import { RegiteredkeysListMock, UnregiteredkeysListMock } from '../../../mocks/keysList'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import NoKeysRegistered from '../partials/NoKeysRegistered'
-import useUserStore from '../../../stores/useUserStore'
+import { useNavigate } from '../../../hooks/useNavigate'
 
 export default function MyPixKeys() {
   const { userData } = useGlobal()
-  const { navigate } = useNavigation() as NativeStackNavigationProp<any>;
+  const { navigate } = useNavigate();
 
   const goToPixKeyAdd = useCallback((type: string) => {
     console.log('navigate to ' + type + ' register key');
@@ -23,7 +20,6 @@ export default function MyPixKeys() {
 
   return (
     <View>
-      <HeaderPage />
       <Container>
         <H2>Chaves encontradas</H2>
         {

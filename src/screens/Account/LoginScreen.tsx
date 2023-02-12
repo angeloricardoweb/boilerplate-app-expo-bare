@@ -1,24 +1,20 @@
 import { View, Text, StyleSheet, Image, TextInput, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from './../../styles/colors';
-import { useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
-import Container from '../../components/layout/Container';
-import ButtonPrimary from '../../components/buttons/ButtonPrimary';
 import { formStyles, typography } from '../../styles/globalStyles';
-import CardContainer from '../../components/layout/CardContainer';
 import ButtonSecondary from '../../components/buttons/ButtonSecondary';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigate } from '../../hooks/useNavigate';
 
 export default function LoginScreen() {
   const [text, onChangeText] = useState("");
   const [password, onChangePassword] = useState("");
 
-  const { navigate } = useNavigation() as NativeStackNavigationProp<any>;
+  const { navigate } = useNavigate();
 
   const navigateToHome = () => {
-    navigate('HomeScreen' as never)
+    navigate('HomeDrawerNavigation')
   }
 
   return (

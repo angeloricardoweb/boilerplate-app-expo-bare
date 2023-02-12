@@ -20,6 +20,7 @@ import PortabilityPixKey from './src/screens/Pix/PixKeyAdd/PortabilityPixKey';
 import HomeTabNavigation from './src/navigation/HomeTabNavigation';
 import 'react-native-gesture-handler';
 import HomeDrawerNavigation from './src/navigation/HomeDrawerNavigation';
+import MainStack from './src/navigation/routes/MainStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,28 +43,7 @@ export default function App() {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#0A7A75" }}>
       <GlobalContextProvider>
         <View style={{ position: 'relative', flex: 1 }}>
-          <NavigationContainer >
-            <Stack.Navigator screenOptions={{
-              headerShown: false,
-            }}
-              initialRouteName="login"
-            >
-              <Stack.Screen name="LoginScreen" component={LoginScreen} />
-              <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-              <Stack.Screen name="MyPixKeys" component={MyPixKeys} />
-              <Stack.Screen name="PixKeyOptions" component={PixKeyOptions} />
-              <Stack.Screen name="RemoveKeyConfirmation" component={RemoveKeyConfirmation} />
-              <Stack.Screen name="PixKeyAdd" component={PixKeyAdd} />
-              <Stack.Screen name="HomeScreen" component={HomeScreen} />
-              <Stack.Screen name="PortabilityPixKey" component={PortabilityPixKey} />
-              <Stack.Screen name="detail" component={DetailScreen} />
-              <Stack.Screen name="RegisterKeyConfirmation" component={RegisterKeyConfirmation} />
-              <Stack.Screen name="InfoResult" component={InfoResult} />
-              <Stack.Screen name="HomeTabNavigation" component={HomeTabNavigation} />
-              <Stack.Screen name="HomeDrawerNavigation" component={HomeDrawerNavigation} />
-
-            </Stack.Navigator>
-          </NavigationContainer>
+          <MainStack />
         </View>
         <Simulate />
       </GlobalContextProvider>

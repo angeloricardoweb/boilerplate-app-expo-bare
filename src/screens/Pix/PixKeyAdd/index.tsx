@@ -1,6 +1,5 @@
 import { View, Text, TextInput, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, ScrollView, Button } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import HeaderPage from '../../../components/header'
 import Container from '../../../components/layout/Container'
 import H2 from '../../../components/typography/H2'
 import { useNavigation, useRoute } from '@react-navigation/native'
@@ -60,7 +59,6 @@ export default function PixKeyAdd() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={{ flex: 1, justifyContent: 'space-between' }}
     >
-      <HeaderPage />
       <ScrollView style={{ flex: 1 }}>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <Container>
