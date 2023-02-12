@@ -16,9 +16,6 @@ export default function HomeScreen() {
         <ButtonPrimary handler={() => navigate('HomeTabNavigation')}>
           <Text>Home Tab navigation</Text>
         </ButtonPrimary>
-        <ButtonPrimary handler={() => navigate('HomeDrawerNavigation')}>
-          <Text>Home Drawer navigation</Text>
-        </ButtonPrimary>
       </Container>
 
     </View>
