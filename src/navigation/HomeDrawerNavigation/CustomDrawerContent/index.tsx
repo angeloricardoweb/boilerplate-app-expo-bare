@@ -1,15 +1,24 @@
 import { Text, View, TouchableOpacity } from 'react-native'
 import {
-  createDrawerNavigator,
   DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
 } from '@react-navigation/drawer';
 import { colors } from '../../../styles/colors';
 import { useNavigate } from '../../../hooks/useNavigate';
+import { CommonActions } from '@react-navigation/native';
 
 export function CustomDrawerContent(props: any) {
-  const { navigate } = useNavigate();
+  const { navigate, dispatch } = useNavigate();
+
+  function handleLogout() {
+    dispatch(
+      CommonActions.reset({
+        index: 1,
+        routes: [
+          { name: 'LoginScreen' },
+        ],
+      })
+    );
+  }
 
   return (
     <DrawerContentScrollView {...props}
@@ -26,6 +35,9 @@ export function CustomDrawerContent(props: any) {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigate('NotificationsScreen')}>
           <Text style={{ color: '#fff' }}>Notificações</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleLogout}>
+          <Text style={{ color: '#fff' }}>Sair</Text>
         </TouchableOpacity>
         {/* <DrawerItem label="Help" onPress={() => alert('Link to help')} /> */}
       </View>
