@@ -11,7 +11,7 @@ function HomeScreen() {
   const { navigate } = useNavigation() as NativeStackNavigationProp<any>
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Text style={{alignSelf: 'center'}}>Home!</Text>
+      <Text style={{ alignSelf: 'center' }}>Home!</Text>
       <Container>
         <ButtonSecondary handler={() => navigate('HomeScreen')}>
           <Text>Go to Home Stack</Text>
@@ -43,6 +43,7 @@ export default function HomeTabNavigation() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        headerShown: false,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 

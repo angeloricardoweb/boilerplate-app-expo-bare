@@ -66,6 +66,7 @@ export default function LoginScreen() {
                     secureTextEntry={true}
                     maxLength={6}
                     value={password}
+                    placeholder="Senha"
                   />
                 </View>
 
