@@ -61,7 +61,7 @@ export default function LoginScreen() {
                 />
               </View>
 
-              <View style={{ marginTop: 8 }}>
+              <View style={{ marginTop: 8, marginBottom: 32 }}>
                 <View style={formStyles.compactInputWrapper}>
                   <FontAwesome name="lock" size={24} color={colors.primaryBlack} />
                   <TextInput

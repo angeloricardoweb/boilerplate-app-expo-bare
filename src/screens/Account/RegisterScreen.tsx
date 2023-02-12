@@ -30,7 +30,7 @@ export default function RegisterScreen() {
         style={{ flex: 1 }}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} >
-          <ScrollView style={{ flex: 1, marginVertical: 32 }}>
+          <ScrollView style={{ flex: 1}}>
             <View style={{ paddingHorizontal: 40 }}>
               <View>
                 <Image
@@ -58,7 +58,7 @@ export default function RegisterScreen() {
                   placeholder="CPF"
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginTop: 8 }]}>
+              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
                 <FontAwesome name="user" size={24} color={colors.primaryBlack} />
                 <TextInput
                   style={formStyles.compactInput}
@@ -67,7 +67,7 @@ export default function RegisterScreen() {
                   value={fullName}
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginTop: 8 }]}>
+              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
               <MaterialIcons name="email" size={24} color={colors.primaryBlack} />
                 <TextInput
                   style={formStyles.compactInput}
@@ -77,7 +77,7 @@ export default function RegisterScreen() {
                 />
               </View>
 
-              <View style={[formStyles.compactInputWrapper, { marginTop: 8 }]}>
+              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
                 <FontAwesome name="lock" size={24} color={colors.primaryBlack} />
                 <TextInput
                   style={formStyles.compactInput}
@@ -88,7 +88,7 @@ export default function RegisterScreen() {
                   value={password}
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginTop: 8 }]}>
+              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
                 <FontAwesome name="lock" size={24} color={colors.primaryBlack} />
                 <TextInput
                   style={formStyles.compactInput}
