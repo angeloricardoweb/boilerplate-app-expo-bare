@@ -1,5 +1,17 @@
-import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image, TextInput, TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useState } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import { colors } from './../../styles/colors';
 import { useNavigation } from '@react-navigation/native';
 import { formStyles, typography } from '../../styles/globalStyles';
@@ -9,37 +21,39 @@ import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 export default function RegisterScreen() {
-  const [text, onChangeText] = useState("");
-  const [fullName, onChangeFullName] = useState("");
-  const [email, onChangeEmail] = useState("");
-  const [phone, onChangePhone] = useState("");
-  const [dateOfBirth, onChangeDateOfBirth] = useState("");
-  const [password, onChangePassword] = useState("");
-  const [confirmPassword, onChangeConfirmPassword] = useState("");
+  const [text, onChangeText] = useState('');
+  const [fullName, onChangeFullName] = useState('');
+  const [email, onChangeEmail] = useState('');
+  const [phone, onChangePhone] = useState('');
+  const [dateOfBirth, onChangeDateOfBirth] = useState('');
+  const [password, onChangePassword] = useState('');
+  const [confirmPassword, onChangeConfirmPassword] = useState('');
 
   const { navigate } = useNavigation() as NativeStackNavigationProp<any>;
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
       <LinearGradient
-        colors={["#12A19A", "#0C4F4B"]}
+        colors={['#0a91c7', '#0a91c7']}
         start={[0.0, 0.5]}
         end={[1.0, 0.5]}
         locations={[0.0, 1.0]}
         style={{ flex: 1 }}
       >
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss} >
-          <ScrollView style={{ flex: 1}}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <ScrollView style={{ flex: 1 }}>
             <View style={{ paddingHorizontal: 40 }}>
               <View>
                 <Image
                   style={{
                     width: 90,
                     height: 60,
-                    alignSelf: "center",
+                    alignSelf: 'center',
                   }}
-                  source={require("../../../assets/logo/logo.png")}
+                  source={require('../../../assets/logo/logo.png')}
                   resizeMode="contain"
                 />
               </View>
@@ -48,7 +62,11 @@ export default function RegisterScreen() {
                 <Text style={typography.subTitleClean}>Crie sua conta</Text>
               </View>
               <View style={formStyles.compactInputWrapper}>
-                <FontAwesome name="user" size={24} color={colors.primaryBlack} />
+                <FontAwesome
+                  name="user"
+                  size={24}
+                  color={colors.primaryBlack}
+                />
                 <TextInput
                   style={formStyles.compactInput}
                   onChangeText={onChangeText}
@@ -58,8 +76,14 @@ export default function RegisterScreen() {
                   placeholder="CPF"
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
-                <FontAwesome name="user" size={24} color={colors.primaryBlack} />
+              <View
+                style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}
+              >
+                <FontAwesome
+                  name="user"
+                  size={24}
+                  color={colors.primaryBlack}
+                />
                 <TextInput
                   style={formStyles.compactInput}
                   placeholder="Nome Completo"
@@ -67,8 +91,14 @@ export default function RegisterScreen() {
                   value={fullName}
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
-              <MaterialIcons name="email" size={24} color={colors.primaryBlack} />
+              <View
+                style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}
+              >
+                <MaterialIcons
+                  name="email"
+                  size={24}
+                  color={colors.primaryBlack}
+                />
                 <TextInput
                   style={formStyles.compactInput}
                   placeholder="E-mail"
@@ -77,8 +107,14 @@ export default function RegisterScreen() {
                 />
               </View>
 
-              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
-                <FontAwesome name="lock" size={24} color={colors.primaryBlack} />
+              <View
+                style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}
+              >
+                <FontAwesome
+                  name="lock"
+                  size={24}
+                  color={colors.primaryBlack}
+                />
                 <TextInput
                   style={formStyles.compactInput}
                   placeholder="Senha"
@@ -88,8 +124,14 @@ export default function RegisterScreen() {
                   value={password}
                 />
               </View>
-              <View style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}>
-                <FontAwesome name="lock" size={24} color={colors.primaryBlack} />
+              <View
+                style={[formStyles.compactInputWrapper, { marginBottom: 8 }]}
+              >
+                <FontAwesome
+                  name="lock"
+                  size={24}
+                  color={colors.primaryBlack}
+                />
                 <TextInput
                   style={formStyles.compactInput}
                   placeholder="Confirmação de Senha"
@@ -100,30 +142,35 @@ export default function RegisterScreen() {
                 />
               </View>
 
-
-
               <View style={{ marginTop: 32 }}>
                 <View style={{ marginTop: 16 }}>
-                  <ButtonSecondary handler={() => { navigate('LoginScreen') }}>
+                  <ButtonSecondary
+                    handler={() => {
+                      navigate('LoginScreen');
+                    }}
+                  >
                     Criar Conta
                   </ButtonSecondary>
                 </View>
-                <TouchableOpacity onPress={() => { navigate('LoginScreen') }}>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigate('LoginScreen');
+                  }}
+                >
                   <Text style={{ color: '#fff' }}>Voltar</Text>
                 </TouchableOpacity>
               </View>
             </View>
           </ScrollView>
-        </TouchableWithoutFeedback >
+        </TouchableWithoutFeedback>
       </LinearGradient>
     </KeyboardAvoidingView>
-  )
+  );
 }
-
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.primary,
     flex: 1,
-  }
-})
+  },
+});

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app-boabank-pix",
-    "slug": "app-boabank-pix",
+    "name": "boilerplate-expo-bare",
+    "slug": "boilerplate-expo-bare",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
