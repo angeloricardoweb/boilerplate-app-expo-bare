@@ -40,7 +40,7 @@ export default function CustomHeader(props: any) {
             </View>
             <TouchableOpacity onPress={() => null}>
               <Ionicons
-                name="information-circle-outline"
+                name="information-circle"
                 size={24}
                 color={colors.white}
               />
