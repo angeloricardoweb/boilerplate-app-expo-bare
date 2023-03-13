@@ -1,7 +1,5 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import ButtonSecondary from '../../components/buttons/ButtonSecondary';
-import Container from '../../components/layout/Container';
 
 import { useNavigate } from '../../hooks/useNavigate';
 

@@ -3,12 +3,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PlusIco from '../../svg/PlusIco';
-import HomeScreen from '../../screens/Dashboard/HomeScreen';
 import SettingsScreen from '../../screens/Dashboard/SettingsScreen';
 import HelpScreen from '../../screens/Dashboard/HelpScreen';
 import AddNewScreen from '../../screens/Dashboard/AddNewScreen';
 import ProfileScreen from '../../screens/Dashboard/ProfileScreen';
 import CustomHeader from '../../components/header';
+import HomeStack from '../../screens/Dashboard/HomeStack/HomeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,17 +37,19 @@ export default function HomeTabNavigation() {
             }
           } else {
             if (route.name === 'Home') {
-              iconName = focused
-                ? 'ios-information-circle'
-                : 'ios-information-circle-outline';
+              iconName = focused ? 'home' : 'home';
+              size = focused ? 24 : 20;
             } else if (route.name === 'Settings') {
               iconName = focused ? 'ios-list' : 'ios-list-outline';
+              size = focused ? 28 : 26;
             } else if (route.name === 'Help') {
               iconName = focused
                 ? 'ios-help-circle'
                 : 'ios-help-circle-outline';
+              size = focused ? 28 : 26;
             } else if (route.name === 'Profile') {
               iconName = focused ? 'ios-person' : 'ios-person-outline';
+              size = focused ? 24 : 22;
             }
           }
 
@@ -64,7 +66,8 @@ export default function HomeTabNavigation() {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      {/* cada screen deve possuir sua própria stack navigation */}
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
       <Tab.Screen name="AddNew" component={AddNewScreen} />
       <Tab.Screen name="Help" component={HelpScreen} />
