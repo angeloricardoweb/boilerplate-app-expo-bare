@@ -1,50 +1,58 @@
-import React from 'react'
-import { View, Text, StatusBar, TouchableOpacity, Alert, Image } from 'react-native'
+import React from 'react';
+import { View, StatusBar, TouchableOpacity, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { styles } from './style'
 import { colors } from '../../styles/colors';
 import Container from '../layout/Container';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigate } from '../../hooks/useNavigate';
 
 export default function CustomHeader(props: any) {
-  const { navigate, goBack } = useNavigate();
+  const { goBack } = useNavigate();
 
   function handleGoBack() {
     goBack();
   }
-  function showInfo() {
-    Alert.alert('Boa Bank', 'App em desenvolvimento');
-  }
 
   return (
     <LinearGradient
-      colors={["#12A19A", "#0C4F4B"]}
+      colors={['#0a91c7', '#0a91c7']}
       start={[0.0, 0.5]}
       end={[1.0, 0.5]}
       locations={[0.0, 1.0]}
       style={{ marginBottom: 8 }}
     >
-      <View style={styles.container}>
+      <View>
         <Container>
-          <View style={styles.wrapper}>
+          <View className="flex flex-row justify-between items-center h-16">
             <TouchableOpacity onPress={handleGoBack}>
-              <Ionicons name="arrow-back-circle-sharp" size={24} color={colors.white} />
+              <Ionicons
+                name="arrow-back-circle-sharp"
+                size={24}
+                color={colors.white}
+              />
             </TouchableOpacity>
-            <View>
+            <View className="flex flex-row justify-center align-center">
               <Image
-                style={styles.logo}
-                source={require("../../../assets/logo/logo.png")}
+                source={require('../../../assets/logo/logo.png')}
                 resizeMode="contain"
+                style={{ width: 40 }}
               />
             </View>
-            <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
-              <Ionicons name="menu" size={24} color={colors.white} />
+            <TouchableOpacity onPress={() => null}>
+              <Ionicons
+                name="information-circle"
+                size={24}
+                color={colors.white}
+              />
             </TouchableOpacity>
           </View>
         </Container>
       </View>
-      <StatusBar barStyle={"light-content"} backgroundColor="transparent" translucent />
+      <StatusBar
+        barStyle={'light-content'}
+        backgroundColor="transparent"
+        translucent
+      />
     </LinearGradient>
-  )
+  );
 }
