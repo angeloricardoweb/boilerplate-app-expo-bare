@@ -8,6 +8,7 @@ import SettingsScreen from '../../screens/Dashboard/SettingsScreen';
 import HelpScreen from '../../screens/Dashboard/HelpScreen';
 import AddNewScreen from '../../screens/Dashboard/AddNewScreen';
 import ProfileScreen from '../../screens/Dashboard/ProfileScreen';
+import CustomHeader from '../../components/header';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,7 @@ export default function HomeTabNavigation() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerShown: false,
+        header: (props) => <CustomHeader {...props} />,
 
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;

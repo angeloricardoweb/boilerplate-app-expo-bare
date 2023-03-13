@@ -29,7 +29,7 @@ export default function App() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#0a91c7' }}>
       <GlobalContextProvider>
-        <View style={{ position: 'relative', flex: 1 }}>
+        <View className="relative flex-1">
           <MainStack />
         </View>
       </GlobalContextProvider>
