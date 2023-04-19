@@ -2,9 +2,17 @@
   "expo": {
     "name": "boilerplate-expo-bare",
     "slug": "boilerplate-expo-bare",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d3f6c131-e27f-433a-9659-e7389a7e5428"
+      }
+    }
   }
 }
