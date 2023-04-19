@@ -17,6 +17,7 @@ import { formStyles, typography } from '../../styles/globalStyles';
 import ButtonSecondary from '../../components/buttons/ButtonSecondary';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigate } from '../../hooks/useNavigate';
+import OneSignal from 'react-native-onesignal';
 
 export default function LoginScreen() {
   const [text, onChangeText] = useState('');
@@ -27,6 +28,9 @@ export default function LoginScreen() {
   const navigateToHome = () => {
     navigate('HomeTabNavigation');
   };
+  //  Inicializa o OneSignal e solicita permissão
+  OneSignal.setAppId('c249abd0-db09-4931-a748-6840807025d5')
+  OneSignal.promptForPushNotificationsWithUserResponse()
 
   return (
     <KeyboardAvoidingView
