@@ -106,6 +106,7 @@ export default function LoginScreen() {
             <Text style={{ color: '#fff' }}>Abrir Conta</Text>
           </TouchableOpacity>
         </View>
+        <Text className='text-center text-white'>Developed by github.com/angeloricardoweb</Text>
       </LinearGradient>
     </KeyboardAvoidingView>
   );
